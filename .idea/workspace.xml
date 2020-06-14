@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aa818966-f1bc-48af-a536-3a50f3407015" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +35,12 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
@@ -115,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592120569223</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Manage your apps with ease">
+      <created>1592120901079</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592120901079</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -123,13 +135,17 @@
     <option name="LAST_COMMIT_MESSAGE" value="Manage your apps with ease" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="189" y="28" key="CommitChangelistDialog2" timestamp="1592120568444">
+    <state x="428" y="233" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592120979521">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
-    <state x="189" y="28" key="CommitChangelistDialog2/0.23.1440.801@0.23.1440.801" timestamp="1592120568444" />
-    <state x="320" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592120574654">
+    <state x="428" y="233" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.801@0.23.1440.801" timestamp="1592120979521" />
+    <state x="189" y="28" key="CommitChangelistDialog2" timestamp="1592120900828">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
-    <state x="320" y="163" key="Vcs.Push.Dialog.v2/0.23.1440.801@0.23.1440.801" timestamp="1592120574654" />
+    <state x="189" y="28" key="CommitChangelistDialog2/0.23.1440.801@0.23.1440.801" timestamp="1592120900828" />
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2" timestamp="1592120906585">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state x="320" y="163" key="Vcs.Push.Dialog.v2/0.23.1440.801@0.23.1440.801" timestamp="1592120906585" />
   </component>
 </project>
