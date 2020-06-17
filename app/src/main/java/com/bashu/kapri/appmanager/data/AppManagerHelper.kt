@@ -62,7 +62,7 @@ object AppManagerHelper {
         } catch (e: Exception) {
             e.printStackTrace()
         }
-        return "V-$versionName"
+        return "V : $versionName"
     }
 
     fun getInstalledOn(packageName: String, application: Application): String {
@@ -72,7 +72,7 @@ object AppManagerHelper {
             val info = manager.getPackageInfo(packageName, 0)
             if (info != null) {
                 val milli = info.firstInstallTime
-                installedOn = "Installed " + DateHelper.getFormattedDate(milli)
+                installedOn = "Installed On : " + DateHelper.getFormattedDate(milli)
             }
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
@@ -87,7 +87,7 @@ object AppManagerHelper {
             val info = manager.getPackageInfo(packageName, 0)
             if (info != null) {
                 val milli = info.lastUpdateTime
-                lastUpdatedOn = "Updated " + DateHelper.getFormattedDate(milli)
+                lastUpdatedOn = "Updated On : " + DateHelper.getFormattedDate(milli)
             }
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
