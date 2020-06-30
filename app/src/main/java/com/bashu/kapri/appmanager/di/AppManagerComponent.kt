@@ -1,6 +1,6 @@
 package com.bashu.kapri.appmanager.di
 
-import com.bashu.kapri.appmanager.view.PlaceholderFragment
+import com.bashu.kapri.appmanager.ui.home.PlaceholderFragment
 import dagger.Subcomponent
 
 @Subcomponent

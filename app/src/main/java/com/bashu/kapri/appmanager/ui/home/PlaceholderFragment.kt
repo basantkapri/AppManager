@@ -1,4 +1,4 @@
-package com.bashu.kapri.appmanager.view
+package com.bashu.kapri.appmanager.ui.home
 
 import android.os.Bundle
 import android.view.View

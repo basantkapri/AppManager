@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:paddingBottom="40dp"
+    tools:context=".HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topPanel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="0dp"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintHeight_percent=".16"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/title"
@@ -31,14 +35,19 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintHeight_percent=".83"
+        app:layout_constraintTop_toBottomOf="@id/topPanel" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnRefresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/refresh" />
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/refresh"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

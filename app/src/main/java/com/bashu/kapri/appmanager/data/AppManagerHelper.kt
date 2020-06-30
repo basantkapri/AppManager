@@ -3,6 +3,7 @@ package com.bashu.kapri.appmanager.data
 import android.app.Application
 import android.content.Intent
 import android.content.pm.ApplicationInfo
+import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import android.net.Uri
@@ -43,11 +44,30 @@ object AppManagerHelper {
             val applicationInfo = manager.getApplicationInfo(packageName, 0)
             if (applicationInfo != null)
                 name = manager.getApplicationLabel(applicationInfo) as String
-
         } catch (e: Exception) {
             e.printStackTrace()
         }
         return name
+    }
+
+    fun getPermissions(packageName: String, application: Application): Array<String>? {
+        var requestedPermissions: Array<String>? = null
+        try {
+            val manager = application.packageManager
+            val applicationInfo = manager.getApplicationInfo(packageName, 0)
+            if (applicationInfo != null) {
+
+                val packageInfo: PackageInfo =
+                    manager.getPackageInfo(
+                        applicationInfo.packageName,
+                        PackageManager.GET_PERMISSIONS
+                    )
+                requestedPermissions = packageInfo.requestedPermissions
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return requestedPermissions
     }
 
     fun getAppVersion(packageName: String, application: Application): String {

@@ -1,17 +1,17 @@
 package com.bashu.kapri.appmanager.adapter
 
 import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bashu.kapri.appmanager.R
-import com.bashu.kapri.appmanager.model.ApplicationData
 import com.bashu.kapri.appmanager.model.ApplicationDetail
+import com.bashu.kapri.appmanager.utils.AlertUtil
 import com.bashu.kapri.appmanager.utils.AppHelper
 import com.bashu.kapri.appmanager.utils.ImageHelper
 
@@ -26,8 +26,8 @@ class ApplicationListAdapter(
         var appName: TextView = view.findViewById(R.id.appName)
         var packageName: TextView = view.findViewById(R.id.packageName)
         var versionNo: TextView = view.findViewById(R.id.versionNo)
-        var installed_On: TextView = view.findViewById(R.id.installed_On)
-        var last_Updated_on: TextView = view.findViewById(R.id.last_Updated_on)
+        var installedOn: TextView = view.findViewById(R.id.installed_On)
+        var lastUpdatedOn: TextView = view.findViewById(R.id.last_Updated_on)
         var btnAppDetail: Button = view.findViewById(R.id.btnAppDetail)
         var btnOpen: Button = view.findViewById(R.id.btnOpen)
         var btnUninstall: Button = view.findViewById(R.id.btnUninstall)
@@ -37,22 +37,22 @@ class ApplicationListAdapter(
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val view2 = LayoutInflater.from(context).inflate(R.layout.application_cell, parent, false)
-        return ViewHolder(view2)
+        val view = LayoutInflater.from(context).inflate(R.layout.application_cell, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-
-        val packageName = applicationList[position].appPackage
-        viewHolder.appName.text = applicationList[position].appName
+        val application = applicationList[position]
+        val packageName = application.appPackage
+        viewHolder.appName.text = application.appName
         viewHolder.packageName.text = packageName
-        viewHolder.versionNo.text = applicationList[position].appVersion
-        viewHolder.installed_On.text = applicationList[position].installedOn
-        viewHolder.last_Updated_on.text = applicationList[position].lastUpdatedOn
+        viewHolder.versionNo.text = application.appVersion
+        viewHolder.installedOn.text = application.installedOn
+        viewHolder.lastUpdatedOn.text = application.lastUpdatedOn
 
         ImageHelper.showImage(
             context,
-            applicationList[position].appDrawableURI,
+            application.appDrawableURI,
             viewHolder.appIcon
         )
 
@@ -66,6 +66,24 @@ class ApplicationListAdapter(
 
         viewHolder.btnUninstall.setOnClickListener {
             AppHelper.uninstallApplication(context, it, packageName)
+        }
+
+        viewHolder.appIcon.setOnClickListener {
+            if (application.list.isNullOrEmpty()) {
+                AlertUtil.showAlert(it, "No Permission found...")
+            } else {
+                AlertUtil.showAlert(it, "${application.list?.get(0)}")
+            }
+        }
+
+        if (application.isHarmful) {
+            viewHolder.appIcon.setBackgroundResource(R.drawable.image_bg)
+            viewHolder.appName.setTextColor(ContextCompat.getColor(context, R.color.harm))
+            viewHolder.packageName.setTextColor(ContextCompat.getColor(context, R.color.harm))
+        } else {
+            viewHolder.appName.setTextColor(ContextCompat.getColor(context, R.color.black))
+            viewHolder.packageName.setTextColor(ContextCompat.getColor(context, R.color.black))
+            viewHolder.appIcon.setBackgroundResource(R.drawable.image_bg_normal)
         }
     }
 

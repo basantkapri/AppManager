@@ -28,7 +28,7 @@ object AppHelper {
         try {
             //Open the specific App Info page:
             val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-            intent.data = Uri.parse("package:" + packageName!!)
+            intent.data = Uri.parse("package:$packageName")
             context.startActivity(intent)
 
         } catch (e: Exception) {

@@ -9,7 +9,7 @@ buildscript {
             'targetSdk'          : 29,
             'appcompat'          : '1.1.0',
             'androidx'           : '1.0.0',
-            'androidx_navigation': '2.3.0-alpha05',
+            'androidx_navigation': '2.3.0',
             'androidxCollection' : '1.0.0',
             'androidxArch'       : '2.0.0',
             'constraintLayout'   : '2.0.0-beta4',

@@ -1,4 +1,4 @@
-package com.bashu.kapri.appmanager.viewmodel
+package com.bashu.kapri.appmanager.ui.home
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

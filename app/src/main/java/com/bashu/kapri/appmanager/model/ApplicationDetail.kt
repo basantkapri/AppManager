@@ -8,5 +8,7 @@ data class ApplicationDetail(
     var installedOn: String,
     var lastUpdatedOn: String,
     var appVersion: String,
-    var appDrawableURI: Uri
+    var appDrawableURI: Uri,
+    var isHarmful: Boolean = false,
+    var list: Array<String>? = null
 )

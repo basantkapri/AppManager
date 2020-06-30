@@ -4,6 +4,5 @@ import dagger.Module
 
 @Module
 class AMModule {
-
 }
 

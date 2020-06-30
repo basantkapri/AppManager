@@ -1,7 +1,7 @@
 package com.bashu.kapri.appmanager.di
 
 import android.content.Context
-import com.bashu.kapri.appmanager.view.PlaceholderFragment
+import com.bashu.kapri.appmanager.ui.home.PlaceholderFragment
 import dagger.BindsInstance
 import dagger.Component
 

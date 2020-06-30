@@ -11,7 +11,7 @@ import com.bashu.kapri.appmanager.di.DaggerAppGraph
 
 class AMApplication : Application(), AppManagerDependencyProvider {
 
-    val appGraph: AppGraph by lazy {
+    private val appGraph: AppGraph by lazy {
         DaggerAppGraph.factory().create(applicationContext)
     }
 
