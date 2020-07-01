@@ -6,7 +6,7 @@ import com.bashu.kapri.appmanager.model.ApplicationDetail
 import com.bashu.kapri.appmanager.utils.CommonUtils
 
 class DataProvider(private val application: Application) {
-    fun getAllInstalledApps(): ApplicationData {
+    fun getAllInstalledApps(permission: Boolean): ApplicationData {
         val resolveInfoList = AppManagerHelper.getApplicationResolver(application)
 
         var data = ApplicationData()
@@ -14,7 +14,9 @@ class DataProvider(private val application: Application) {
             val activityInfo = resolveInfo.activityInfo
             val packageName = activityInfo.applicationInfo.packageName.toString()
             val appName = AppManagerHelper.getAppName(packageName, application)
-            val permission = AppManagerHelper.getPermissions(packageName, application)
+
+            val permission =
+                if (permission) AppManagerHelper.getPermissions(packageName, application) else null
             when {
                 CommonUtils.isAppMatched(appName) -> {
                     data.harmfulAppSize = data.harmfulAppSize + 1

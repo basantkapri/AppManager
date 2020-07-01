@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
 import android.view.View
+import androidx.fragment.app.Fragment
 
 object AppHelper {
 
@@ -41,6 +42,17 @@ object AppHelper {
             val uri = Uri.parse("package:$packageName")
             val uIntent = Intent(Intent.ACTION_DELETE, uri)
             context.startActivityForResult(uIntent, 100)
+        } catch (e: Exception) {
+            e.printStackTrace()
+            AlertUtil.showAlert(view, "Application can't be uninstalled")
+        }
+    }
+
+    fun uninstallApplication(fragment: Fragment, view: View, packageName: String) {
+        try {
+            val uri = Uri.parse("package:$packageName")
+            val uIntent = Intent(Intent.ACTION_DELETE, uri)
+            fragment.startActivityForResult(uIntent, 100)
         } catch (e: Exception) {
             e.printStackTrace()
             AlertUtil.showAlert(view, "Application can't be uninstalled")

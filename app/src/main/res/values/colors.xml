@@ -6,4 +6,11 @@
     <color name="card_bg">#FFFFFF</color>
     <color name="harm">#ab2104</color>
     <color name="black">#000000</color>
+    <color name="splash_bg">#fff</color>
+    <color name="profile_blue_circle">#00A9DE</color>
+    <color name="common_gray_light">#E6E7EB</color>
+    <color name="common_gray">#FF696A72</color>
+    <color name="common_white">#FFFFFF</color>
+    <color name="common_black">#000000</color>
+    <color name="light_gray">#FFB1B2B8</color>
 </resources>

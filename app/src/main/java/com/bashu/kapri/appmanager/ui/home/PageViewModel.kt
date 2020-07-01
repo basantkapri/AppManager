@@ -10,6 +10,6 @@ class PageViewModel(application: Application) : AndroidViewModel(application) {
     val data = MutableLiveData<ApplicationData>()
 
     fun getApplicationList() {
-        data.value = DataProvider(getApplication()).getAllInstalledApps()
+        data.value = DataProvider(getApplication()).getAllInstalledApps(false)
     }
 }

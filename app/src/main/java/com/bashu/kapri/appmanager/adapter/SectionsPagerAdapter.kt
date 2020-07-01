@@ -7,14 +7,18 @@ import com.bashu.kapri.appmanager.model.ApplicationData
 import com.bashu.kapri.appmanager.model.ApplicationDetail
 import com.bashu.kapri.appmanager.ui.home.PlaceholderFragment
 
-class SectionsPagerAdapter(fm: FragmentManager, private var data: ApplicationData) :
+class SectionsPagerAdapter(
+    fm: FragmentManager,
+    private var data: ApplicationData,
+    val fragment: Fragment
+) :
     FragmentStatePagerAdapter(fm) {
     private val list = ArrayList<PlaceholderFragment>()
     override fun getItem(pos: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
         val fragment =
-            PlaceholderFragment(getList(pos))
+            PlaceholderFragment(getList(pos), fragment)
         list.add(fragment)
         return fragment
     }

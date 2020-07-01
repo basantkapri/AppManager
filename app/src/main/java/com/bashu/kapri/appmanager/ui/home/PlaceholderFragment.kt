@@ -8,11 +8,14 @@ import com.bashu.kapri.appmanager.adapter.ApplicationListAdapter
 import com.bashu.kapri.appmanager.model.ApplicationDetail
 import kotlinx.android.synthetic.main.fragment_main.*
 
-class PlaceholderFragment(private var applicationList: MutableList<ApplicationDetail>) :
+class PlaceholderFragment(
+    private var applicationList: MutableList<ApplicationDetail>,
+    val fragment: Fragment
+) :
     Fragment(R.layout.fragment_main) {
     private var scanAdapter: ApplicationListAdapter? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        scanAdapter = ApplicationListAdapter(requireActivity(), applicationList)
+        scanAdapter = ApplicationListAdapter(requireActivity(), fragment, applicationList)
 
         app_list.apply {
             adapter = scanAdapter

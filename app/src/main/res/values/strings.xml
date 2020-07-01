@@ -2,5 +2,6 @@
     <string name="app_name">Application Manager</string>
     <string name="title_home">Apps</string>
     <string name="title_permission">Permissions</string>
+    <string name="permission_mng">Dangerous Permissions</string>
     <string name="title_about">About</string>
 </resources>

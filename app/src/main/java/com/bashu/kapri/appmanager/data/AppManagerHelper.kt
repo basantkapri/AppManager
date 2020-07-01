@@ -10,6 +10,7 @@ import android.net.Uri
 
 object AppManagerHelper {
 
+
     fun getApplicationResolver(application: Application): MutableList<ResolveInfo> {
         val intent = Intent(Intent.ACTION_MAIN, null)
         intent.addCategory(Intent.CATEGORY_LAUNCHER)

@@ -55,9 +55,49 @@ object CommonUtils {
         "Baidu".toLowerCase()
     )
 
+
+    private val dangerousPermission = listOf(
+        "READ_CALENDAR",
+        "WRITE_CALENDAR",
+        "CAMERA",
+        "READ_CONTACTS",
+        "WRITE_CONTACTS",
+        "GET_ACCOUNTS",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "RECORD_AUDIO",
+        "READ_PHONE_STATE",
+        "READ_PHONE_NUMBERS",
+        "CALL_PHONE",
+        "ANSWER_PHONE_CALLS",
+        "READ_CALL_LOG",
+        "WRITE_CALL_LOG",
+        "ADD_VOICEMAIL",
+        "USE_SIP",
+        "PROCESS_OUTGOING_CALLS",
+        "BODY_SENSORS",
+        "SEND_SMS",
+        "RECEIVE_SMS",
+        "READ_SMS",
+        "RECEIVE_WAP_PUSH",
+        "RECEIVE_MMS",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+    )
+
     fun isAppMatched(name: String): Boolean {
         return list.contains(name.toLowerCase())
     }
+
+    fun isDangerous(permission: String): Boolean {
+        dangerousPermission.forEach {
+            if (permission.contains(it)) {
+                return true
+            }
+        }
+        return false
+    }
+
 
     /*fun isEmulator(context: Context): Boolean {
         val androidId = Secure.getString(context.contentResolver, "android_id")

@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bashu.kapri.appmanager.R
 import com.bashu.kapri.appmanager.model.ApplicationDetail
@@ -17,6 +18,7 @@ import com.bashu.kapri.appmanager.utils.ImageHelper
 
 class ApplicationListAdapter(
     private val context: Activity,
+    private val fragment: Fragment,
     private var applicationList: MutableList<ApplicationDetail>
 ) :
     RecyclerView.Adapter<ApplicationListAdapter.ViewHolder>() {
@@ -65,7 +67,7 @@ class ApplicationListAdapter(
         }
 
         viewHolder.btnUninstall.setOnClickListener {
-            AppHelper.uninstallApplication(context, it, packageName)
+            AppHelper.uninstallApplication(fragment, it, packageName)
         }
 
         viewHolder.appIcon.setOnClickListener {
@@ -74,16 +76,6 @@ class ApplicationListAdapter(
             } else {
                 AlertUtil.showAlert(it, "${application.list?.get(0)}")
             }
-        }
-
-        if (application.isHarmful) {
-            viewHolder.appIcon.setBackgroundResource(R.drawable.image_bg)
-            viewHolder.appName.setTextColor(ContextCompat.getColor(context, R.color.harm))
-            viewHolder.packageName.setTextColor(ContextCompat.getColor(context, R.color.harm))
-        } else {
-            viewHolder.appName.setTextColor(ContextCompat.getColor(context, R.color.black))
-            viewHolder.packageName.setTextColor(ContextCompat.getColor(context, R.color.black))
-            viewHolder.appIcon.setBackgroundResource(R.drawable.image_bg_normal)
         }
     }
 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llUserCell"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/top_lay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_card_white"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/size5">
+
+        <LinearLayout
+            android:layout_width="@dimen/size90"
+            android:layout_height="@dimen/size90"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/size5"
+            android:layout_marginRight="@dimen/size4"
+            android:background="@drawable/blue_circle"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/sortName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/common_white"
+                android:textSize="@dimen/buttonTextSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/splash_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/splash_bg"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/size5"
+                android:paddingRight="@dimen/size10">
+
+                <TextView
+                    android:id="@+id/appName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15"
+                    android:paddingLeft="@dimen/size5"
+                    android:text="SMS"
+                    android:textColor="@color/common_black"
+                    android:textSize="@dimen/alertTitle" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/dots"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size15"
+            android:layout_gravity="center_vertical|right"
+            android:paddingRight="@dimen/size5"
+            android:src="@drawable/rightdatechevron" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/size5"
+        android:background="@color/common_gray_light"
+        app:layout_constraintTop_toBottomOf="@+id/top_lay" />
+
+    <TextView
+        android:id="@+id/tvApplication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size2"
+        android:paddingLeft="@dimen/size15"
+        android:text="Applications\n(Be careful with the permissions)"
+        android:textColor="@color/profile_blue_circle"
+        android:textSize="@dimen/alertTitle"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
